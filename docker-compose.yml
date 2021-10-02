@@ -1,0 +1,5 @@
+services:
+  bot:
+    image: mxr/batchest:latest
+    container_name: BatChest
+    restart: unless-stopped
