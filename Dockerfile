@@ -16,13 +16,12 @@ RUN rm src/*.rs
 COPY ./src ./src
 RUN cargo build --release
 
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 
 WORKDIR /usr/src/batchest
 
 RUN apt-get update
 
 COPY --from=rust_builder /usr/src/batchest/target/release/batchest ./batchest
-COPY .env ./.env
 
 CMD ./batchest

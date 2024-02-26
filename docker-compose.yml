@@ -3,3 +3,5 @@ services:
     image: mxr/batchest:latest
     container_name: BatChest
     restart: unless-stopped
+    volumes:
+      - ./.env:/usr/src/batchest/.env
